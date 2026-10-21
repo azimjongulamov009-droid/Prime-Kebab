@@ -527,44 +527,18 @@ async def courier_update_status(callback: types.CallbackQuery):
 async def unknown_message(message: Message):
     await message.answer("Tushunmadim 🙂 «Menyu 🍽» tugmasini bosing yoki /start yuboring.",reply_markup=btn.menuBtn)
 
-
-
-
-
 async def main():
-    token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "").strip()
-
-    if not token:
-        logging.error("BOT_TOKEN sozlanmagan.")
-        return
-
-    bot = Bot(
-        token=token,
-        default=DefaultBotProperties(parse_mode=ParseMode.HTML)
-    )
-
-
+    token=os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ","").strip()
+    if not token: token=input("Bot tokenini @BotFather dan oling va shu yerga kiriting: ").strip()
+    if not token: logging.error("Token kiritilmadi. Dastur to‘xtatildi."); return
+    bot=Bot(token=token,default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     try:
         logging.info("FASTFOOD PREMIUM ishga tushmoqda...")
-
-        if ADMIN_ID:
-            logging.info("Admin ID sozlangan: %s", ADMIN_ID)
-        else:
-            logging.warning(
-                "ADMIN_ID sozlanmagan. "
-                "Buyurtmalar bazaga saqlanishi mumkin, "
-                "lekin admin xabari yuborilmaydi."
-            )
-
+        if ADMIN_ID: logging.info("Admin ID sozlangan: %s",ADMIN_ID)
+        else: logging.warning("ADMIN_ID sozlanmagan. Buyurtmalar bazaga saqlanadi, admin xabari yuborilmaydi.")
         await dp.start_polling(bot)
-
-    finally:
-        await bot.session.close()
-
+    finally: await bot.session.close()
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except (KeyboardInterrupt, SystemExit):
-        logging.info("Bot to‘xtatildi.")
-
+    try: asyncio.run(main())
+    except (KeyboardInterrupt,SystemExit): logging.info("Bot to‘xtatildi.")
