@@ -528,8 +528,8 @@ async def unknown_message(message: Message):
     await message.answer("Tushunmadim 🙂 «Menyu 🍽» tugmasini bosing yoki /start yuboring.",reply_markup=btn.menuBtn)
 
 async def main():
-    token=os.getenv("BOT_TOKEN","").strip()
-    if not token: token=input("Bot tokenini @BotFather dan oling va shu yerga kiriting: ").strip()
+    token=os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ","8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ").strip()
+    if not token: token=input("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ").strip()
     if not token: logging.error("Token kiritilmadi. Dastur to‘xtatildi."); return
     bot=Bot(token=token,default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     try:
