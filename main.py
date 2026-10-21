@@ -528,6 +528,7 @@ async def unknown_message(message: Message):
     await message.answer("Tushunmadim 🙂 «Menyu 🍽» tugmasini bosing yoki /start yuboring.",reply_markup=btn.menuBtn)
 
 
+
 async def main():
     token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "").strip()
 
@@ -562,5 +563,8 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        logging.info("Bot to‘xtatildi.")
 
