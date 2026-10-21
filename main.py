@@ -531,7 +531,7 @@ async def unknown_message(message: Message):
 
 
 async def main():
-    token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "").strip()
+    token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ").strip()
 
     if not token:
         logging.error(
