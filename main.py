@@ -529,13 +529,13 @@ async def unknown_message(message: Message):
 
 
 
+
 async def main():
     token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "").strip()
 
     if not token:
         logging.error(
-            "BOT_TOKEN sozlanmagan. "
-            "FadeHost Environment Variables bo‘limiga BOT_TOKEN qo‘shing."
+            "BOT_TOKEN topilmadi! FadeHost Environment Variables bo‘limini tekshiring."
         )
         return
 
@@ -543,6 +543,7 @@ async def main():
         token=token,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
+
 
     try:
         logging.info("FASTFOOD PREMIUM ishga tushmoqda...")
