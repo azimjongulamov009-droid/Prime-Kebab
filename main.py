@@ -535,7 +535,7 @@ async def main():
     token = os.getenv("8518492736:AAEf4JdvJdO17zc1oUaEreR_ElI5y4TqVJQ", "").strip()
 
     if not token:
-        logging.error("BOT_TOKEN FadeHost sozlamalarida topilmadi.")
+        logging.error("BOT_TOKEN sozlanmagan.")
         return
 
     bot = Bot(
